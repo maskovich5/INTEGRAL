@@ -35,6 +35,7 @@ namespace Wpfintegral
 
         private double SubIntegral(double x)
         {
+            //указывается интеграл
             return 2 * x - Math.Log(2 * x) + 234;
             //return x*x;
         }
@@ -50,6 +51,7 @@ namespace Wpfintegral
             tbAnswer.Text = Convert.ToString(answer);
         }
 
+        //выбор метода
         private ICalculatorIntegral GetCalculator()
         {
             if (cmbVarietion.SelectedIndex == 0)
@@ -69,7 +71,8 @@ namespace Wpfintegral
                 throw new Exception("Выбран не поддерживаемый метод");
             }
         }
-
+        
+        //построение графика (зависимость итераций от времени)
         private void btPlotGraph_Click(object sender, RoutedEventArgs e)
         {
             MainViewModel Graph = this.DataContext as MainViewModel;
